@@ -6,6 +6,7 @@ import { setItem } from '../component/Async';
 
 const {height,width} = Dimensions.get('window')
 const OnboardingScreen = ({ navigation }) => {
+  
     const handleDone = () => {
         
         setTimeout(() => {
@@ -27,6 +28,7 @@ const OnboardingScreen = ({ navigation }) => {
               onSkip={handleDone}
               DoneButtonComponent={doneButton}
               bottomBarHighlight={true}
+              
               
         dotStyle={styles.dotStyle} // Apply dotStyle here
         selectedDotStyle={styles.selectedDotStyle} // Apply selectedDotStyle here
