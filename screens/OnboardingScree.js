@@ -2,14 +2,16 @@ import { StyleSheet, View, Text, Dimensions, TouchableOpacity, ActivityIndicator
 import React from 'react';
 import Onboarding from 'react-native-onboarding-swiper';
 import Lottie from 'lottie-react-native';
+import { setItem } from '../component/Async';
 
 const {height,width} = Dimensions.get('window')
 const OnboardingScreen = ({ navigation }) => {
     const handleDone = () => {
-
+        
         setTimeout(() => {
             navigation.push('Home')
-        },900)
+        }, 100)
+        setItem('onboarded','1')
     }
     const doneButton = ({...props}) => {
         return (
@@ -33,7 +35,7 @@ const OnboardingScreen = ({ navigation }) => {
             backgroundColor: '#fffdfd',
             image: (
               <View>
-                <Lottie style={styles.lottie} source={require('../assets/ani.json')} autoPlay loop />
+                {/* <Lottie style={styles.lottie} source={require('../assets/ani.json')} autoPlay loop /> */}
               </View>
             ),
             title: 'Boost Productivity',
